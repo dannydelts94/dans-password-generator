@@ -1,10 +1,28 @@
-// Assignment code here
 
-
-// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
+var specChar = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var numBers = "0123456789";
+var uAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lAlpha = "abcdefghijklmnopqrstuvwxyz";
+
+
+
+
+
+function generatePassword () {
+
+
+
+
+
+
+  return
+}
+
+
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
