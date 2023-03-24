@@ -5,22 +5,46 @@ var specChar = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ','
 var numBers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var uAlpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var lAlpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-/* Function that generates the random password */
-function generatePassword () {
+var paSelect = [];
+/* Function that customizes the random password */
+function customizePassword () {
 /* prompt and confirm meassges that interact with the user to help generate a custom password */
 var pwLegnth = prompt("How long would you like your password to be? NOTE: Please choose a numeric value of at least 8 and no more than 128");
 var pwlAlpha = confirm("Would you like your password to contain lowercase letters?");
 var pwuAlpha = confirm("Would you like your password to contain uppercase letters?");
 var pwnumBers = confirm("Would you like your password to contain numerics?");
 var pwspecChar = confirm("Would you like your password to contain special characters?");
-
-if (pwLegnth < 8 || pwLegnth> 128) {
+/* lets the user know the parameters they've slected */
+if (pwLegnth < 8 || pwLegnth > 128) {
 alert("Please choose a numeric value between 8 and 128 and try again!");
 } 
 else {
   alert("Your password will contain" + pwLegnth + "characters.");
 }
-if (pwlAlpha)
+if (pwlAlpha) {
+  alert("Your password will contain lowercase letters.");
+}
+else {
+  alert("Your passcode will not contain lowercase letters.");
+}
+if (pwuAlpha) {
+  alert("Your password will contain uppercase letters.");
+}
+else {
+  alert("Your password will not contain uppercase letters.");
+}
+if (pwnumBers) {
+  alert("Your password will contain numerics.");
+}
+else {
+  alert("Your password will not contain numerics.");
+}
+if (pwspecChar) {
+  alert("Your password will contain special characters.");
+}
+else {
+  alert("Your password will not contain special characters.")
+}
 }
 
 function writePassword() {
