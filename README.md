@@ -2,7 +2,7 @@
 
 ## Description
 
-The purpose of this project was to put together a random password generator. This web app interacts with user so they can customize the character types and lengths that make up the password. When the ussr is done setting the parameters the computer will generate a random password in the dashed box according to the user's specifications.
+The purpose of this project was to put together a random password generator. This web app interacts with user so they can customize the character types and lengths that make up the password. When the user is done setting the parameters the computer will generate a random password in the dashed box according to the user's specifications.
 
 ## Installation
 
