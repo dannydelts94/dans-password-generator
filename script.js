@@ -1,6 +1,6 @@
 /* calls the generate button that will start the pw generator */
 var generateBtn = document.querySelector("#generate");
-/* the variables that contain the characters that make up our generated password */
+/* the variables that contain the characters that make up the generated password */
 var specChar = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", "\\", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"];
 var numBers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var uAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -12,7 +12,10 @@ function generatePassword() {
   /* lets the user know the parameters they've selected anf if changes are necessary */
   var pwLegnth = prompt("How long would you like your password to be? NOTE: Please choose a numeric value of at least 8 and no more than 128");
   if (pwLegnth < 8 || pwLegnth > 128) {
-    alert("Please choose a numeric value between 8 and 128 and try again!");
+    return "Please choose a numeric value between 8 and 128 and try again!";
+  }
+  else if (isNaN(pwLegnth)) {
+    return "Please enter a numeric value and try again!";
   }
   else {
     alert("Your password will contain " + pwLegnth + " characters.");
@@ -52,31 +55,35 @@ function generatePassword() {
     pwnumBers === false &&
     pwspecChar === false
   ) {
-    alert("Please choose at least one character type and try again!");
+    return "Please make at least one selection and try again!";
   }
 
-  /* combines user selections to generate values */
+  /* combines user selections to generate values that reflect them */
   if (pwlAlpha) {
-    paSelect = paSelect.concat(pwlAlpha);
+    paSelect = paSelect.concat(lAlpha);
   }
   if (pwuAlpha) {
-    paSelect = paSelect.concat(pwuAlpha);
+    paSelect = paSelect.concat(uAlpha);
   }
   if (pwnumBers) {
-    paSelect = paSelect.concat(pwnumBers);
+    paSelect = paSelect.concat(numBers);
   }
   if (pwspecChar) {
-    paSelect = paSelect.concat(pwspecChar);
+    paSelect = paSelect.concat(specChar);
   }
 
-  for (var i = 0; i < pwLegnth; i++) {
-    var generation = (Math.floor(Math.random() * paSelect.length));
-    generatePassword = generatePassword + paSelect[generation];
+  /* for statement that generates the the password using methods */
+  var pWd = ""
+  for (let i = 0; i < pwLegnth; i++) {
+    var ranDom = (Math.floor(Math.random() * paSelect.length));
+
+    pWd = pWd + paSelect[ranDom];
+
 
   }
-  return generatePassword
+  return pWd;
 }
-
+/* calls the funtion to put the password on the page */
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -84,6 +91,5 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-// Add event listener to generate button
+/* responds to the user clicking by generating the password */
 generateBtn.addEventListener("click", writePassword);
