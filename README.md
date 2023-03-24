@@ -22,7 +22,7 @@ MIT
 
 ## Deployed Link
 
-
+https://dannydelts94.github.io/dans-password-generator/
 
 ![screenshot](/assets/password-gen-screenshot.png)
 
