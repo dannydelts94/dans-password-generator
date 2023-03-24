@@ -74,7 +74,7 @@ function generatePassword() {
 
   /* for statement that generates the the password using methods */
   var pWd = ""
-  for (let i = 0; i < pwLegnth; i++) {
+  for (var i = 0; i < pwLegnth; i++) {
     var ranDom = (Math.floor(Math.random() * paSelect.length));
 
     pWd = pWd + paSelect[ranDom];
