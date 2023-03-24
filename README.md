@@ -23,3 +23,6 @@ MIT
 ## Deployed Link
 
 
+
+![screenshot](/assets/password-gen-screenshot.png)
+
